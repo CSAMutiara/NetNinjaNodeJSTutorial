@@ -6,6 +6,9 @@
 /*********************************** APP.JS ***********************************/
 /******************************** ^^ used in ^^ *******************************/
 /******************************************************************************/
+/************* _6_README.TXT, _6_WRITEME.TXT & _6_WRITEME2.TXT ****************/
+/********************************* ^^ uses ^^ *********************************/
+/******************************************************************************/
 
 /* -------------------------------------------------------------------------- */
 
@@ -66,10 +69,8 @@ var fs = require('fs');
  ***** - HERE: 
  *****      - \C\param1\C\ is \C\'_6_writeMe.txt'\C\
  *****      - \C\param2\C\ is the var \C\readMe\C\
- *****      - thus, \C\'_6_writeMe.txt'\C\ is a copy of
- *****        \C\'_6_readMe.txt'\C\ (which was modified afterwards)
- ***** - \C\\C\ **** - 
- ***** - \F\\F\ **** - 
+ *****      - thus, \F\'_6_writeMe.txt'\F\ is a copy of
+ *****        \F\'_6_readMe.txt'\F\ (which was modified afterwards)
  *****/
 /*****************************************************************/
 
@@ -93,7 +94,7 @@ fs.writeFileSync('_6_writeMe.txt', readMe); */
  *****          - \C\p3b\C\ is the data we read from the \C\param1\C\ file
  ***** - BENEFITS: since the method isn't blocking following code (which
  *****   it would if it were a synchronous method), following code can run
- *****   while \C\fs\C\ reads \C\_6_readMe.txt\C\
+ *****   while \C\fs\C\ reads \F\_6_readMe.txt\F\
  *****      - can test with \C\console.log('test');\C\ ... \C\'test\C\
  *****        should be logged before the \C\data\C\ even though its
  *****        code is second
@@ -101,11 +102,9 @@ fs.writeFileSync('_6_writeMe.txt', readMe); */
  *****      - we want the process to end when using \C\param3\C\
  *****      - \C\p3b\C\ is \C\data\C\
  *****      - once \C\fs.readFile()\C\ has finished reading 
- *****        \C\_6_readMe.txt\C\, the \C\param3\C\ function will fire
+ *****        \F\_6_readMe.txt\F\, the \C\param3\C\ function will fire
  *****      - thus, the console logs \C\data\C\
  *****      - then, \C\fs.readFile()\C\ ends
- ***** - \C\\C\ **** - 
- ***** - \F\\F\ **** - 
  *****/
 /****************************************************************************/
 
@@ -120,19 +119,16 @@ fs.writeFileSync('_6_writeMe.txt', readMe); */
 
 /* -------------------------------------------------------------------------- */
  
-/****************************************/
+/*****************************************************/
 /*****
  ***** Asynchronous version of \C\.writeFileSync()\C\
  ***** - WRITE files using same approach
  ***** - TRY inside \C\fs.readFile()\C\
- ***** - in other words: **** - 
  ***** - HERE:
  *****      - \C\param2\C\ for \C\fs.writeFile();\C\ is 
  *****        \C\data\C\ from \C\fs.readFile()\C\
- ***** - \C\\C\ **** - 
- ***** - \F\\F\ **** - 
  *****/
-/****************************************/
+/*****************************************************/
 
 fs.readFile('_6_readMe.txt', 'utf8', function(err, data) {
     fs.writeFile('_6_writeMe2.txt', data); 
