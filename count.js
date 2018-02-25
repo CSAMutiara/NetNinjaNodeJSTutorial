@@ -15,7 +15,7 @@
 /***** sample functionality that will be "required" in app.js *****/
 /******************************************************************/
 
-var counter = function(arr){
+var counter = function(arr) {
     return "There are " + arr.length + " elements in this array";
 };
 
