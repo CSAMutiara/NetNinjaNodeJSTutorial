@@ -98,8 +98,6 @@ var fs = require('fs');
  *****        also needs a callback function. here, we want it
  *****        to write \F\_6_writeMe.txt\F\ with the data
  *****        read from \F\_6_readMe.txt\F\
- ***** - \C\\C\ **** - 
- ***** - \F\\F\ **** - 
  *****/
 /***************************************************************/
 
@@ -112,7 +110,7 @@ var fs = require('fs');
 
 /* -------------------------------------------------------------------------- */
  
-/****************************************/
+/**************************************************************************/
 /*****
  ***** REMOVE directories asynchronously (also more ideal)
  ***** - directories can't be removed if they aren't empty, so delete
@@ -120,13 +118,9 @@ var fs = require('fs');
  *****      - REMEMBER \C\fs.unlink()\C\ for deleting files from before!
  *****      - this time, pass callback function as a \C\param2\C\ and
  *****        this can be our original intended method: removing \C\stuff\C\
- ***** - in other words: **** - 
- ***** - HERE: 
  *****      - we want to remove \C\stuff\C\ & \F\_6_writeMe.txt\F\ (inside)
- ***** - \C\\C\ **** - 
- ***** - \F\\F\ **** - 
  *****/
-/****************************************/
+/**************************************************************************/
 
 fs.unlink('./stuff/_6_writeMe.txt', function() {
     fs.rmdir('stuff'); 
@@ -134,24 +128,6 @@ fs.unlink('./stuff/_6_writeMe.txt', function() {
 
  
 
-// ::copy:: //
-/* -------------------------------------------------------------------------- */
- 
- 
-/****************************************/
-/*****
- ***** **** - 
- ***** - in other words: **** - 
- ***** - HERE: **** - 
- ***** - \C\\C\ **** - 
- ***** - \F\\F\ **** - 
- *****/
-/****************************************/
-
-// >>
- 
-
-// ::end copy:: //
 
 /* -------------------------------------------------------------------------- */
 
